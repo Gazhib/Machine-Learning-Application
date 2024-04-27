@@ -1,0 +1,390 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-right: 150px;
+}
+
+.App {
+  display: flex;
+
+}
+
+.darkWelcome {
+  flex-grow: 1;
+  margin-left: 256px;
+
+}
+
+.lightWelcome {
+  flex-grow: 1;
+  margin-left: 256px;
+}
+
+
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+
+
+.images img {
+  width: 350px;
+
+}
+
+
+
+.innerWelcome p {
+  font-size: 20px;
+}
+
+.title {
+  font-size: 75px;
+  text-align: center;
+}
+
+.button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.darkWelcome .button button {
+  font-size: large;
+  padding: 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(50, 50, 50);
+  cursor: pointer;
+  color: #ECEFF1;
+}
+
+
+.lightWelcome .button button {
+  font-size: large;
+  padding: 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: #bcbcbc;
+  cursor: pointer;
+
+
+}
+
+.button button:hover {
+  background-color: rgb(83, 82, 82);
+}
+
+
+/*SideBar: */
+.lightBar {
+  background-color: #bcbcbc;
+}
+
+.darkBar {
+  background: #252525;
+}
+
+.SideBar {
+  flex: 0 0 256px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 256px;
+  height: 100%;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.HiddenSideBar {
+  flex: 0 0 50px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100px;
+  height: 100%;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.SideBarText {
+  margin-top: 25px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  transition: 0.5s;
+  visibility: visible;
+}
+
+.darkBar button {
+  height: 55px;
+  width: 256px;
+  background: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  overflow-x: hidden;
+  transition: width 0.5s;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ECEFF1;
+}
+
+
+.darkBar button:hover {
+  background-color: #3a3a3a;
+}
+
+.lightBar button {
+  height: 55px;
+  width: 256px;
+  background: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  overflow-x: hidden;
+  transition: width 0.5s;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.lightBar button:hover {
+  background-color: #b9b9b9;
+}
+
+.HiddenSideBarText {
+  transition: 0.5s;
+  overflow: hidden;
+  margin-top: 25px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  transition: 0.5s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.HiddenSideBarText button {
+  height: 55px;
+  width: 100px;
+  background: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: width 0.5s;
+}
+
+.HiddenSideBarText button:hover {
+  background-color: #3a3a3a;
+}
+
+
+
+.buttonIcons {
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.blackModeSwitcher {
+  border-radius: 10px;
+  width: 50px;
+  margin-left: 20px;
+}
+
+.blackModeSwitcher:hover {
+  background-color: #3a3a3a;
+}
+
+.whiteModeSwitcher {
+  width: 50px;
+  margin-left: 20px;
+}
+
+.whiteModeSwitcher:hover {
+  border-radius: 10px;
+  background-color: #cbcbcb;
+}
+
+
+
+.darkBar .menuIcon {
+  width: 50px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.darkBar .menuIcon:hover {
+  background-color: #3a3a3a;
+}
+
+.lightBar .menuIcon {
+  width: 50px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.lightBar .menuIcon:hover {
+  background-color: #b9b9b9;
+}
+
+
+
+
+/* SegmentationPage */
+
+.SegmentationPage {
+  margin-left: 256px;
+
+  flex-grow: 1;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  margin-top: 100px;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.instruction {
+  font-size: 20px;
+  flex: 1;
+  display: flex;
+  text-align: center;
+}
+
+.SegmentationPage input {
+  display: none;
+}
+
+.blackSelectButton {
+  background-color: rgb(51, 51, 51);
+  border: none;
+  color: #ECEFF1;
+  border-radius: 10px;
+  font-size: 40px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.blackSelectButton:hover {
+  background-color: rgb(73, 73, 73);
+}
+
+.whiteSelectButton {
+  background-color: #bcbcbc;
+  border: none;
+  border-radius: 10px;
+  font-size: 40px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.whiteSelectButton:hover {
+  background-color: rgb(203, 203, 203);
+}
+
+
+.originalAndSegmentedImages {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.originalAndSegmentedImages img {
+  width: 500px;
+}
+
+
+/* ColorizationPage */
+.ColorizationPage {
+  flex-grow: 1;
+  margin-left: 256px;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  margin-top: 100px;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.ColorizationPage input {
+  display: none;
+}
+
+.originalAndColorizedImages {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ColorizationPage img {
+  width: 500px;
+}
+
+.loadingSide {
+  position: relative;
+}
+
+.loadingImage {
+  filter: blur(10px);
+}
+
+.originalAndSegmentedImages .loadingSide .loadingGif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 96px;
+}
+
+.originalAndColorizedImages .loadingSide .loadingGif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 96px;
+}
+
+/* Creating a Random Celebrity Face Page */
+.RandomCelebrityFacePage{
+  flex-grow: 1;
+  margin-left: 256px;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  margin-top: 100px;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.RandomCelebrityFacePage input{
+  display: none;
+}

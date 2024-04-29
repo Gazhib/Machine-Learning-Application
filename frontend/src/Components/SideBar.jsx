@@ -12,13 +12,13 @@ export default function SideBar() {
   }
   function handleChangeUi(type) {
     if (type === "goToHome") {
-      dispatch(uiActions.changeUi('WelcomePage'));
-    } else if (type === 'goToSegmentation'){
-      dispatch(uiActions.changeUi('SegmentationPage'));
-    } else if (type === 'goToColorization'){
-      dispatch(uiActions.changeUi('ColorizationPage'))
-    } else if (type === 'goToRandomization'){
-      dispatch(uiActions.changeUi('RandomizationPage'))
+      dispatch(uiActions.changeUi("WelcomePage"));
+    } else if (type === "goToSegmentation") {
+      dispatch(uiActions.changeUi("SegmentationPage"));
+    } else if (type === "goToColorization") {
+      dispatch(uiActions.changeUi("ColorizationPage"));
+    } else if (type === "goToRandomization") {
+      dispatch(uiActions.changeUi("RandomizationPage"));
     }
   }
   function handleSwitchMode() {
@@ -42,28 +42,19 @@ export default function SideBar() {
             </p>
             <p>
               <button onClick={() => handleChangeUi("goToSegmentation")}>
-                {" "}
-                {isShown ? "Segmentation of Image" : "Segment"}
+                <p>{isShown ? "Segmentation of Image" : "Segment"}</p>
               </button>
             </p>
-            {isShown ? (
+            <p>
               <button onClick={() => handleChangeUi("goToColorization")}>
-                <p>Colorization of an Image</p>
+                {isShown ? "Colorization of an Image" : "Colorize"}
               </button>
-            ) : (
-              <button onClick={() => handleChangeUi("goToColorization")}>
-                <p>Colorize</p>
-              </button>
-            )}
-            {isShown ? (
+            </p>
+            <p>
               <button onClick={() => handleChangeUi("goToRandomization")}>
-                <p>Random Celebrity Image</p>
+                {isShown ? "Random Celebrity Image" : "Celebrity"}
               </button>
-            ) : (
-              <button onClick={() => handleChangeUi("goToRandomization")}>
-                <p>Celebrity</p>
-              </button>
-            )}
+            </p>
           </div>
         </div>
       </div>

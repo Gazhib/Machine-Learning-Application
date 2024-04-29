@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import loadingGif from "../icons/loading-button.gif";
 export default function ContainerImages({ image, typeOfImage, secondImage }) {
   return (

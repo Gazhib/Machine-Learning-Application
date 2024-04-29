@@ -10,11 +10,16 @@ import Ali from "../assets/colorized-and-original/Ali.png";
 import AliColorized from "../assets/colorized-and-original/AliColorized.png";
 import city from "../assets/colorized-and-original/city.jpg";
 import cityColorized from "../assets/colorized-and-original/cityColorized.png";
+import firstCelebrity from "../assets/fake-celebrity/firstCelebrity.jpg";
+import secondCelebrity from "../assets/fake-celebrity/secondCelebrity.jpg";
+import thirdCelebrity from "../assets/fake-celebrity/thirdCelebrity.jpg";
+
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../store";
 import { Fade } from "react-awesome-reveal";
 import WelcomePageInfo from "./WelcomePageInfo";
-import data from '../data-for-info.js'
+import data from "../data-for-info.js";
+import SinglePhotoWelcome from "./SinglePhotoWelcome.jsx";
 export default function WelcomePage() {
   const dispatch = useDispatch();
   const isLight = useSelector((state) => state.ui.isLight);
@@ -32,7 +37,7 @@ export default function WelcomePage() {
     <div className={isLight ? "lightWelcome" : "darkWelcome"}>
       <Fade>
         <p className="title">
-          Welcome to Image Segmentation and Colorization Project
+          Welcome to Different Types of Using of AI Project
         </p>
       </Fade>
       <WelcomePageInfo
@@ -58,6 +63,15 @@ export default function WelcomePage() {
         title={data.colorization.title}
         description={data.colorization.description}
         buttonText={data.colorization.textForButton}
+      />
+      <SinglePhotoWelcome
+        firstImage={firstCelebrity}
+        secondImage={secondCelebrity}
+        thirdImage={thirdCelebrity}
+        handleClick={handleClick}
+        title={data.fakecelebrity.title}
+        description={data.fakecelebrity.description}
+        buttonText={data.fakecelebrity.textForButton}
       />
     </div>
   );

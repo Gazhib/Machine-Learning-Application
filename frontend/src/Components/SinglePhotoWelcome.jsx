@@ -1,16 +1,13 @@
 /* eslint-disable react/prop-types */
 import { Fade } from "react-awesome-reveal";
-export default function WelcomePageInfo({
+export default function SinglePhotoWelcome({
   title,
   description,
   firstImage,
   secondImage,
   thirdImage,
-  modifiedFirstImage,
-  modifiedSecondImage,
-  modifiedThirdImage,
+  buttonText,
   handleClick,
-  buttonText
 }) {
   return (
     <>
@@ -18,26 +15,18 @@ export default function WelcomePageInfo({
         <p className="title">{title}</p>
       </Fade>
       <Fade className="innerWelcome">
-        <p>
-          {description}
-        </p>
-        <p>Here you can see a couple of Before and After examples:</p>
+        <p>{description}</p>
+        <p>Here you can see a couple of examples:</p>
       </Fade>
-      <div className="images">
+      <div className="soloImages">
         <Fade className="image">
           <img src={firstImage} />
-
-          <img src={modifiedFirstImage} />
         </Fade>
         <Fade className="image">
           <img src={secondImage} />
-
-          <img src={modifiedSecondImage} />
         </Fade>
         <Fade className="image">
           <img src={thirdImage} />
-
-          <img src={modifiedThirdImage} />
         </Fade>
       </div>
       <Fade className="button">

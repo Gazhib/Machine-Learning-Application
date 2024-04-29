@@ -50,7 +50,14 @@ body {
 
 }
 
-
+.soloImages{
+  display: grid;
+  gap: 50px;
+}
+.soloImages img {
+  width: 350px;
+  
+}
 
 .innerWelcome p {
   font-size: 20px;

@@ -15,7 +15,7 @@ export default function RandomCelebrityFace() {
     <div className="RandomCelebrityFacePage">
       <p className="instruction">
         In order to Create a Random Celebrity Face, press the button below. Wait
-        for about 5 seconds and receive a photo in .png format
+        for about 5 seconds and receive a photo in .jpg format
       </p>
       <button
         className={isLight ? "whiteSelectButton" : "blackSelectButton"}

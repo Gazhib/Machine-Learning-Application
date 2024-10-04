@@ -1,25 +1,43 @@
 import SegmentationPage from "./Components/SegmentationPage";
-import SideBar from "./Components/SideBar";
 import ColorizationPage from "./Components/ColorizationPage";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import WelcomePage from "./Components/WelcomePage";
 import { useState } from "react";
 import RandomCelebrityFace from "./Components/RandomCelebrityFace";
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import RootLayout from "./RootLayout";
+
 function App() {
-  const show = useSelector((state) => state.ui.show);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        {
+          index: true,
+          element: <WelcomePage />,
+        },
+        {
+          path: "/segmentation",
+          element: <SegmentationPage />,
+        },
+        {
+          path: "/colorization",
+          element: <ColorizationPage />,
+        },
+        {
+          path: "/random-celebrity",
+          element: <RandomCelebrityFace />,
+        },
+      ],
+    },
+  ]);
+
   const isLight = useSelector((state) => state.ui.isLight);
   const [isFirstMount, setIsFirstMount] = useState(true);
-  let text;
-  if (show === "WelcomePage") {
-    text = <WelcomePage />;
-  } else if (show === "SegmentationPage") {
-    text = <SegmentationPage />;
-  } else if (show === "ColorizationPage") {
-    text = <ColorizationPage />;
-  } else if (show === "RandomizationPage"){
-    text = <RandomCelebrityFace />
-  }
+
   useEffect(() => {
     if (isFirstMount) {
       setIsFirstMount(false);
@@ -36,12 +54,7 @@ function App() {
       document.body.style.backgroundColor = "rgb(33, 33, 33)";
     }
   }, [isLight, isFirstMount]);
-  return (
-    <div className="App">
-      <SideBar />
-      {text}
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

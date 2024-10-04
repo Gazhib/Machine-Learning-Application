@@ -50,13 +50,14 @@ body {
 
 }
 
-.soloImages{
+.soloImages {
   display: grid;
   gap: 50px;
 }
+
 .soloImages img {
   width: 350px;
-  
+
 }
 
 .innerWelcome p {
@@ -145,41 +146,49 @@ body {
   visibility: visible;
 }
 
-.darkBar button {
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.darkBar a {
   height: 55px;
   width: 256px;
   background: none;
   font-size: 20px;
   border: none;
   cursor: pointer;
-  overflow-x: hidden;
-  transition: width 0.5s;
-  overflow: hidden;
+  transition: width 0.5s, background-color 0.3s;
   white-space: nowrap;
   color: #ECEFF1;
+  text-align: center;
+  line-height: 55px;
 }
 
-
-.darkBar button:hover {
+.darkBar a:hover {
   background-color: #3a3a3a;
+  color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.lightBar button {
+.lightBar a {
   height: 55px;
   width: 256px;
   background: none;
   font-size: 20px;
   border: none;
   cursor: pointer;
-  overflow-x: hidden;
-  transition: width 0.5s;
-  overflow: hidden;
+  transition: width 0.5s, background-color 0.3s;
   white-space: nowrap;
+  text-align: center;
+  line-height: 55px;
 }
 
-
-.lightBar button:hover {
+.lightBar a:hover {
   background-color: #b9b9b9;
+  color: #000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .HiddenSideBarText {
@@ -192,24 +201,25 @@ body {
   justify-content: center;
   place-items: center;
   text-align: center;
-  transition: 0.5s;
   opacity: 1;
   visibility: visible;
 }
 
-.HiddenSideBarText button {
+.HiddenSideBarText a {
   height: 55px;
   width: 100px;
   background: none;
   font-size: 20px;
   border: none;
   cursor: pointer;
-  transition: width 0.5s;
+  transition: width 0.5s, background-color 0.3s;
 }
 
-.HiddenSideBarText button:hover {
+.HiddenSideBarText a:hover {
   background-color: #3a3a3a;
+  color: #ffffff;
 }
+
 
 
 
@@ -381,7 +391,7 @@ body {
 }
 
 /* Creating a Random Celebrity Face Page */
-.RandomCelebrityFacePage{
+.RandomCelebrityFacePage {
   flex-grow: 1;
   margin-left: 256px;
   display: flex;
@@ -392,6 +402,6 @@ body {
   gap: 50px;
 }
 
-.RandomCelebrityFacePage input{
+.RandomCelebrityFacePage input {
   display: none;
 }

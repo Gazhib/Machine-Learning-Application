@@ -3,23 +3,13 @@ import { uiActions } from "../store";
 import menu from "../icons/menu-navigation.png";
 import lightIcon from "../icons/light-mode-icon.png";
 import darkIcon from "../icons/dark-mode-icon.png";
+import { Link } from "react-router-dom";
 export default function SideBar() {
   const isLight = useSelector((state) => state.ui.isLight);
   const isShown = useSelector((state) => state.ui.sideBar);
   const dispatch = useDispatch();
   function handleClick() {
     dispatch(uiActions.sideBar());
-  }
-  function handleChangeUi(type) {
-    if (type === "goToHome") {
-      dispatch(uiActions.changeUi("WelcomePage"));
-    } else if (type === "goToSegmentation") {
-      dispatch(uiActions.changeUi("SegmentationPage"));
-    } else if (type === "goToColorization") {
-      dispatch(uiActions.changeUi("ColorizationPage"));
-    } else if (type === "goToRandomization") {
-      dispatch(uiActions.changeUi("RandomizationPage"));
-    }
   }
   function handleSwitchMode() {
     dispatch(uiActions.lightNight());
@@ -38,22 +28,22 @@ export default function SideBar() {
           </div>
           <div className={isShown ? "SideBarText" : "HiddenSideBarText"}>
             <p>
-              <button onClick={() => handleChangeUi("goToHome")}>Home</button>
+              <Link to={"/"}>Home</Link>
             </p>
             <p>
-              <button onClick={() => handleChangeUi("goToSegmentation")}>
-                <p>{isShown ? "Segmentation of Image" : "Segment"}</p>
-              </button>
+              <Link to={"/segmentation"}>
+                {isShown ? "Segmentation of Image" : "Segment"}
+              </Link>
             </p>
             <p>
-              <button onClick={() => handleChangeUi("goToColorization")}>
+              <Link to={"/colorization"}>
                 {isShown ? "Colorization of an Image" : "Colorize"}
-              </button>
+              </Link>
             </p>
             <p>
-              <button onClick={() => handleChangeUi("goToRandomization")}>
+              <Link to={"/random-celebrity"}>
                 {isShown ? "Random Celebrity Image" : "Celebrity"}
-              </button>
+              </Link>
             </p>
           </div>
         </div>
